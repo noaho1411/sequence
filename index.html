@@ -1,0 +1,50 @@
+<head>
+	<meta charset="utf-8">
+
+	<title>Coolermaths Games: Sequence</title>
+
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ <div>
+
+
+	<button id="myBtn" onclick="openm();">Pause</button>
+  <p id="score" class="score">score: 0</p>
+	<div id="myModal" class="modal">
+	<div class="modal-content">
+		<button class="close" onclick="closem();">&times;</button>
+		<button onclick="gen();closem();newsc();" class="start">start new game</button>
+    <button class="lb" onclick="alert('leaderboard in progress')">🏆</button>
+    <button class="hs">highscore: 12 ASHT</button>
+    <button class="pb">PB: 9</button>
+    <select class="dif" name="difficulty">
+        <option value="demo">demo</option>
+        <option value="easy" disabled>easy</option>
+        <option value="hard" disabled>hard</option>
+        <option value="challenge" disabled>challenge</option>
+    </select>
+	</div>
+	</div>
+
+
+
+	<p class="shut" id="output"></p>
+  <span id="noclick">
+	<div class="buttonContainer">
+			<button id = "0" class="gameButton red" onclick="main('0')"></button>
+			<button id = "1" class="gameButton orange" onclick="main('1')"></button>
+			<button id = "2" class="gameButton yellow" onclick="main('2')"></button>
+			<button id = "3" class="gameButton lime" onclick="main('3')"></button>
+			<button id = "4" class="gameButton green" onclick="main('4')"></button>
+			<button id = "5" class="gameButton cyan" onclick="main('5')"></button>
+			<button id = "6" class="gameButton blue" onclick="main('6')"></button>
+			<button id = "7" class="gameButton purple" onclick="main('7')"></button>
+			<button id = "8" class="gameButton pink" onclick="main('8')"></button>
+		</div>
+    </span>
+	</div>
+<script src="script.js"></script>
+</body>
+</html>
