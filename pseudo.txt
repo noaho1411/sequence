@@ -1,0 +1,61 @@
+BEGIN MAINPROGRAM
+	Initialise game buttons
+	Initialise pause button
+	Initialise score counter
+	Initialise start button
+	Initialise difficulty select
+	Initialise leaderboard stub
+
+	Let max = 999999999
+	Let low = 111111111
+	Let gameButtons = array of game buttons
+
+	Display menu
+
+	WHILE menu is displayed THEN
+		Display blur game buttons
+		Make game buttons unclickable
+	ENDWHILE
+
+	IF start button is clicked THEN
+		newGame
+	ENDIF
+
+	IF pause button is clicked THEN
+		Display menu
+	ENDIF
+
+END MAINPROGRAM
+
+
+BEGIN newGame
+	Stop displaying menu
+	Let score = 0
+	Let progress = 1
+	newRound
+END newGame
+
+
+BEGIN newRound
+	Let answer = Random(max-low)+low
+	Make game buttons unclickable
+	FOR i = 1 to 9 STEP 1
+		Make gameButton(answer(i)) flash
+		Wait 1 second
+	NEXT
+	Make game buttons clickable
+	clickInput
+END flash
+
+
+
+BEGIN clickInput
+	Get usersClick
+		IF usersClick = answer(progress) THEN
+			IF progress = 9 THEN
+				score = score + 1
+				newRound
+			ENDIF
+
+	Let progress = progress + 1
+END clickInput
