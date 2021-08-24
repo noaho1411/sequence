@@ -9,30 +9,44 @@
 <body>
  <div>
 
-
+	<!-- pause button -->
 	<button id="myBtn" onclick="openm();">Pause</button>
-  <p id="score" class="score">score: 0</p>
+	<!-- score -->
+	<p id="score" class="score">score: 0</p>
+
+	<!-- START OF PAUSE MENU -->
 	<div id="myModal" class="modal">
 	<div class="modal-content">
+		<!-- close button -->
 		<button class="close" onclick="closem();">&times;</button>
+		<!-- start game button -->
 		<button onclick="gen();closem();newsc();" class="start">start new game</button>
-    <button class="lb" onclick="alert('leaderboard in progress')">🏆</button>
-    <button class="hs">highscore: 12 ASHT</button>
-    <button class="pb">PB: 9</button>
-    <select class="dif" name="difficulty">
-        <option value="demo">demo</option>
-        <option value="easy" disabled>easy</option>
-        <option value="hard" disabled>hard</option>
-        <option value="challenge" disabled>challenge</option>
-    </select>
+		<!-- leaderboard button (wip) -->
+    	<button class="lb" onclick="alert('leaderboard in progress')">🏆</button>
+    	<!-- highscore (wip) -->
+    	<button class="hs">highscore: 12 ASHT</button>
+    	<!-- personal best (wip) -->
+    	<button class="pb">PB: 9</button>
+    	<!-- difficulty select (wip) -->
+    	<select class="dif" name="difficulty">
+        	<option value="demo">demo</option>
+        	<option value="easy" disabled>easy</option>
+        	<option value="hard" disabled>hard</option>
+        	<option value="challenge" disabled>challenge</option>
+    	</select>
 	</div>
 	</div>
+	<!-- END OF PAUSE MENU -->
 
 
+	<!-- I don't know what this does but if remove it I won't know how to add it back if something breaks -->
+	<!-- <p class="shut" id="output"></p> -->
 
-	<p class="shut" id="output"></p>
-  <span id="noclick">
+	<!-- START OF BUTTONS -->
+	<!-- noclick span contains the buttons, so they can all be affected by one div -->
+	<span id="noclick">
 	<div class="buttonContainer">
+			<!-- runs main function with argument depending on button -->
 			<button id = "0" class="gameButton red" onclick="main('0')"></button>
 			<button id = "1" class="gameButton orange" onclick="main('1')"></button>
 			<button id = "2" class="gameButton yellow" onclick="main('2')"></button>
@@ -45,6 +59,7 @@
 		</div>
     </span>
 	</div>
+	<!-- END OF BUTTONS -->
 <script src="script.js"></script>
 </body>
 </html>
