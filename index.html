@@ -10,38 +10,64 @@
  <div>
 
 	<!-- pause button -->
-	<button id="myBtn" onclick="openm();">Pause</button>
+	<button id="pause" class = "utility pause" onclick="openm();">Pause</button>
+	<!-- online help: toggle emoji legend -->
+	<button id="emojilegend" class = "utility emojilegend tooltip" onclick="etoggle();">
+
+	<abbr title="Toggle emoji legend on colors">😃</abbr>
+
+	</button>
+	<!-- reset button -->
+	<button id="reset" class = "utility reset" onclick="reset();">
+
+	<abbr title="Reset current answer">🔄</abbr>
+
+	</button>
+	<!-- toggle rules button -->
+	<button id="rules" class = "utility rules" onclick="rules();">
+
+	<abbr title="Open rules">📋</abbr>
+
+	</button>
+	<!-- current answer -->
+	<p class="ans" id="ans"></p>
 	<!-- score -->
 	<p id="score" class="score">score: 0</p>
-
+	<p id="message" class="message">ans</p>
 	<!-- START OF PAUSE MENU -->
 	<div id="myModal" class="modal">
 	<div class="modal-content">
 		<!-- close button -->
 		<button class="close" onclick="closem();">&times;</button>
 		<!-- start game button -->
-		<button onclick="gen();closem();newsc();" class="start">start new game</button>
+		<button onclick="closem();newsc();gen();" class="start">start new game</button>
 		<!-- leaderboard button (wip) -->
-    	<button class="lb" onclick="alert('leaderboard in progress')">🏆</button>
-    	<!-- highscore (wip) -->
-    	<button class="hs">highscore: 12 ASHT</button>
-    	<!-- personal best (wip) -->
-    	<button class="pb">PB: 9</button>
-    	<!-- difficulty select (wip) -->
-    	<select class="dif" name="difficulty">
-        	<option value="demo">demo</option>
-        	<option value="easy" disabled>easy</option>
-        	<option value="hard" disabled>hard</option>
-        	<option value="challenge" disabled>challenge</option>
-    	</select>
+		<button class="lb" onclick="alert('leaderboard in progress')">🏆</button>
+		<!-- highscore (wip) -->
+		<button class="hs"><abbr title="Work in progress">highscore: 21</abbr></button>
+		<!-- personal best (wip) -->
+		<button class="pb"><abbr title="Work in progress">PB: 9</abbr></button>
+		<!-- difficulty select (wip) -->
+		<select id = "difficulty" class="dif" name="difficulty">
+			<option value="easy" >easy</option>
+			<option value="hard" >hard</option>
+			<option value="challenge">challenge</option>
+		</select>
 	</div>
 	</div>
 	<!-- END OF PAUSE MENU -->
 
 
-	<!-- I don't know what this does but if remove it I won't know how to add it back if something breaks -->
-	<!-- <p class="shut" id="output"></p> -->
-
+	<!-- rules -->
+	<p class="ruletext" id="ruletext">
+		The aim of the game is to click the buttons in the same order as they flash.<br><br>
+The more answers you get correct, the longer the amount of buttons per question gets.<br><br>
+If you get one button wrong you lose.<br><br>
+The emojis at the top represent your current answer, and by pressing the smiling face emoji you can toggle an overlay of which emoji is which button.<br><br>
+In order to reset your answer if you haven't submitted it yet, you can press the reset button and your answer will be cleared.<br><br>
+Your answer will be submitted on the last button click (you have to remember how many buttons there are) so be careful with your last click!<br><br>
+<i>Note: some of these features are disabled in challenge mode.</i>
+	</p>
 	<!-- START OF BUTTONS -->
 	<!-- noclick span contains the buttons, so they can all be affected by one div -->
 	<span id="noclick">
