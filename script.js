@@ -94,7 +94,7 @@ function lose(){
 	length=3;
 	delay = 1500;
 	score = 0;
-	l=0;
+	lcount=0;
 	message('Incorrect :(','#b44343');
 	openm();
 }
